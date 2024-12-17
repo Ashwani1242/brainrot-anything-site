@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Turn anything into viral brainrot videos! Transform your boring PDFs and docs into engaging Gen Z content 🚀">
+    <meta name="description"
+        content="Turn anything into viral brainrot videos! Transform your boring PDFs and docs into engaging Gen Z content 🚀">
     <meta name="keywords" content="brainrot, viral videos, gen z content, pdf to video, ai video generator">
     <meta name="author" content="Brainrot Anything">
     <meta property="og:title" content="Brainrot Anything - Turn Boring Content into Viral Videos">
@@ -14,8 +15,9 @@
     <link rel="icon" type="image/png" href="./logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;700&display=swap"
+        rel="stylesheet">
     <title>Brainrot Anything - Turn Boring Content into Viral Videos ✨</title>
     <style>
         .istok-web-regular {
@@ -331,6 +333,10 @@
                 margin-left: -15px;
             }
         }
+
+        video::-webkit-media-controls-pip-button {
+            display: none;
+        }
     </style>
 </head>
 
@@ -364,7 +370,7 @@
                 <div class="loader" id="loader"></div>
                 <div class="video-container" id="videoContainer" style="display: none;">
                     <p>Your video is ready! Watch it below:</p>
-                    <video controls id="videoPlayer"></video>
+                    <video disablePictureInPicture controls id="videoPlayer"></video>
                     <!-- <video controls  src="https://vibevision-bucket.s3.amazonaws.com/673f6f9885fb945764526ea0_brainrot_1734018048511_video.mp4" type="video/mp4" id="videoPlayer"></video> -->
                     <a id="download-button" href="#" target="_blank" download style="display: none;">
                         <button>Download Video</button>
@@ -390,7 +396,7 @@
             <div class="container">
                 <div class="demo-video-container">
                     <p style="text-align: left; margin: 0; margin-bottom: 10px;">Sample Video:</p>
-                    <video controls autoplay muted loop>
+                    <video disablePictureInPicture autoplay muted loop>
                         <source
                             src="https://vibevision-bucket.s3.amazonaws.com/673f6f9885fb945764526ea0_brainrot_1734018048511_video.mp4"
                             type="video/mp4">
@@ -411,8 +417,8 @@
         const videoPlayer = document.getElementById('videoPlayer');
         const downloadButton = document.getElementById('download-button');
 
-        const MAX_FILE_SIZE_MB = 8; 
-        const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024; 
+        const MAX_FILE_SIZE_MB = 8;
+        const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
 
         fileInput.addEventListener('change', () => {
             const file = fileInput.files[0];
